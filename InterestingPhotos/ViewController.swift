@@ -52,7 +52,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
                     print("Failed to save image")
                 }
             } else {
-                print("Failed to save .png data of an image")
+                print("Failed to save .jpeg data of an image")
             }
             let photo = Photo(caption: caption, photoName: photoName)
             self?.photos.append(photo)
