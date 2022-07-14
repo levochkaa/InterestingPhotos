@@ -13,9 +13,7 @@ class DetailViewController: UIViewController {
         title = photo.caption
         let path = FileManager.documentsDirectory.appendingPathComponent(photo.photoName).path
         let image = UIImage(contentsOfFile: path)!
-        // TODO: Don't use this 'newImage' variable
-        let newImage = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .right)
-        let imageView = UIImageView(image: newImage)
+        let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)

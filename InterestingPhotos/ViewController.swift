@@ -45,10 +45,9 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
             guard let caption = ac?.textFields?[0].text else { return }
             let photoName = UUID().uuidString
             let photoDirectory = FileManager.documentsDirectory.appendingPathComponent(photoName)
-            if let pngData = image.pngData() {
+            if let jpegData = image.jpegData(compressionQuality: 1) {
                 do {
-                    // TODO: Save photo orientation correctly
-                    try pngData.write(to: photoDirectory)
+                    try jpegData.write(to: photoDirectory)
                 } catch {
                     print("Failed to save image")
                 }
